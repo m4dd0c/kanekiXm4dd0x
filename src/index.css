@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.big-title {
+  @apply text-9xl;
+}
+
+#cursor {
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  mix-blend-mode: hard-light;
+  transform: translate(-50%, -50%);
+}
+
+.light-gradient {
+  background: radial-gradient(
+    circle at 50% 50%,
+    transparent 10%,
+    rgba(0, 0, 0, 0.95) 20%
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "downcome", Arial, Helvetica, sans-serif;
+}
+
+.gradient {
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgb(206, 206, 206) 100%
+  );
+}
+
+.dark-gradient {
+  background: rgb(255, 255, 255);
+  background: radial-gradient(circle, rgb(28, 28, 28) 0%, rgb(43, 43, 43) 100%);
+}
+
+.rize-gradient {
+  background: rgb(47, 47, 47);
+  background: linear-gradient(
+    180deg,
+    rgb(39, 39, 39) 10%,
+    rgba(200, 78, 242, 1) 50%,
+    rgba(228, 70, 70, 1) 100%
+  );
+}
+
+.project-card-overlay {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
+}
+
+.header-gradient {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgb(230, 30, 30) 0%, transparent 100%);
+}
+
+@font-face {
+  font-family: "downcome";
+  src: url("./assets/fonts/downcome/DOWNCOME.TTF");
+}
+
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+label {
+  color: red;
+}
+input,
+textarea {
+  padding: 0.5rem 0;
+  outline: none;
+  color: rgba(0, 0, 0, 0.8);
+  background-color: transparent;
+  border-bottom: 2px solid red;
+  letter-spacing: 0.1rem;
+  width: 95%;
+}
+
+input:focus,
+textarea:focus {
+  border-bottom: 2px solid black;
+}
+
+
+.my-snap {
+  scroll-snap-align: start;
+}
