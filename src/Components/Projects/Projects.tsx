@@ -11,9 +11,9 @@ const Projects = ({ setPreventScroll }: SetPreventScrollInterface) => {
   const handleHorizontalScrollLeave = () => setPreventScroll(false);
   
   return (
-    <div className="rize-gradient h-screen flex pt-10 justify-center items-center lg:flex-row flex-col overflow-hidden my-snap">
+    <div className="gradient h-screen flex pt-10 justify-center items-center lg:flex-row flex-col overflow-hidden my-snap">
       <div className="lg:h-full h-1/2 lg:w-1/2 w-screen flex justify-center items-center flex-col">
-        <h1 className="py-10 text-5xl tracking-wider text-center text-white">
+        <h1 className="py-10 text-5xl tracking-wider text-center">
           Projects
         </h1>
         <div

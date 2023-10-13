@@ -47,16 +47,6 @@
   background: radial-gradient(circle, rgb(28, 28, 28) 0%, rgb(43, 43, 43) 100%);
 }
 
-.rize-gradient {
-  background: rgb(47, 47, 47);
-  background: linear-gradient(
-    180deg,
-    rgb(39, 39, 39) 10%,
-    rgba(200, 78, 242, 1) 50%,
-    rgba(228, 70, 70, 1) 100%
-  );
-}
-
 .project-card-overlay {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
 }
@@ -70,8 +60,6 @@
   font-family: "downcome";
   src: url("./assets/fonts/downcome/DOWNCOME.TTF");
 }
-
-
 
 ::-webkit-scrollbar {
   display: none;
@@ -99,7 +87,6 @@ input:focus,
 textarea:focus {
   border-bottom: 2px solid black;
 }
-
 
 .my-snap {
   scroll-snap-align: start;

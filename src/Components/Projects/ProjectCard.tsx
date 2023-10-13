@@ -76,7 +76,7 @@ const ProjectCard = ({
         </a>
       </div>
              
-      <div className="flex justify-center items-center gap-2 text-white">
+      <div className="flex justify-center items-center gap-2">
         <BsMouse />
         <h4 className="tracking-widest opacity-80 cursor-default">scroll</h4>
       </div>
