@@ -2,6 +2,8 @@ import { useEffect, useState, useRef } from "react";
 import { iconData } from "../../assets/api/api";
 import { IconContainer } from "./IconContainer";
 import { useInView } from "framer-motion";
+import { btnAnim, hoverTitle } from "../FramerMotion/variants";
+import { motion } from "framer-motion";
 export const Skills = () => {
   const [cPos, setCPos] = useState({ left: 0, top: 0 });
   const [showOverlay, setShowOverlay] = useState<boolean>(true);
@@ -25,12 +27,6 @@ export const Skills = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "-50%" });
 
-  // useEffect(()=>{
-  //   if(isInView) {
-
-  //   }
-  // })
-
   return (
     <div className="my-snap">
       <div
@@ -41,12 +37,12 @@ export const Skills = () => {
           className="p-2 bg-yellow-300 lg:inline-block hidden"
           onClick={() => setShowOverlay(!showOverlay)}
         >
-          Lights {showOverlay ? "Off" : "On"}
+          Lights {showOverlay ? "on" : "off"}
         </button>
         <div className="lg:w-1/2 w-5/6">
-          <h1 className="lg:w-5/6 w-full mx-auto tracking-wider text-white text-5xl underline underline-offset-2 my-5">
+          <motion.h1 whileHover={{...hoverTitle, originX:0}} className="lg:w-5/6 w-full mx-auto tracking-wider text-white text-5xl underline underline-offset-2 my-5">
             About Me
-          </h1>
+          </motion.h1>
           <div className="lg:w-5/6 w-full mx-auto tracking-wider">
             <h1 className="text-5xl text-red-600 mb-2">
               Hey We met again, <br />
@@ -57,7 +53,7 @@ export const Skills = () => {
             <h1 className="text-red-300 text-lg my-2">
               Kagune: Full-stack Sorcery
             </h1>
-            <h1 className="text-red-200 text-lg">
+            <h1 className="text-red-200 text-lg mb-4">
               Unveiling the Code Abyss:
               <br />
               In the vast digital realm, I am{" "}
@@ -67,18 +63,26 @@ export const Skills = () => {
               experiences. Join me in this digital Tokyo, where innovation meets
               artistry, and let's craft digital spells together.
             </h1>
-            <button className="bg-red-600 px-2 py-1 text-center lg:w-1/4 mr-2 text-white hover:bg-black hover:text-white">
+            <motion.button
+              whileHover={btnAnim.hover}
+              whileTap={btnAnim.tap}
+              className="bg-red-600 px-2 py-1 text-center lg:w-1/4 mr-2 text-white hover:bg-white hover:text-black"
+            >
               Hire me
-            </button>
-            <button className="bg-black px-2 py-1 text-center lg:w-1/4 text-white hover:bg-red-600 hover:text-black">
+            </motion.button>
+            <motion.button
+              whileHover={btnAnim.hover}
+              whileTap={btnAnim.tap}
+              className="bg-black px-2 py-1 text-center lg:w-1/4 text-white hover:bg-red-600 border border-red-600"
+            >
               Download Resume
-            </button>
+            </motion.button>
           </div>
         </div>
         <div className="lg:h-screen lg:w-1/2 my-10 w-screen bg-bloodImg bg-center lg:bg-cover bg-contain bg-no-repeat flex justify-center items-center flex-col">
-          <h1 className="text-white text-5xl underline-offset-2 underline my-5">
+          <motion.h1 whileHover={hoverTitle} className="text-white text-5xl underline-offset-2 underline my-5">
             Skills
-          </h1>
+          </motion.h1>
           <div className="flex flex-wrap w-1/2">
             {iconData.map((i) => (
               <IconContainer skill={i} key={i} />

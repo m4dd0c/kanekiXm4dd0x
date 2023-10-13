@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { headerData } from "../../../assets/api/api";
 import { BiMenuAltLeft ,BiX} from "react-icons/bi";
+import {motion} from 'framer-motion'
+import { hoverTitle, ltrVariant } from "../../FramerMotion/variants";
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -10,7 +12,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <div className="z-50 fixed tracking-widest">
+    <motion.div variants={ltrVariant} initial='hidden' animate='visible' className="z-50 fixed tracking-widest">
       <button
         className="lg:hidden bg-slate-800 text-white text-center text-2xl inline-block h-14 w-14 rounded-full m-4"
         onClick={toggleMenu}
@@ -31,19 +33,20 @@ const Header: React.FC = () => {
             } `}
           >
             {headerData.map((i) => (
-              <li
+              <motion.li
+              whileHover={hoverTitle}
                 className="text-center lg:text-lg text-3xl tracking-wider leading-loose "
                 key={i}
               >
                 <a href="#" className="text-white hover:text-black">
                   {i}
                 </a>
-              </li>
+              </motion.li>
             ))}
           </ul>
         </div>
       </nav>
-    </div>
+    </motion.div>
   );
 };
 

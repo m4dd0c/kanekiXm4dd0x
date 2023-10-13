@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { BsMouse } from "react-icons/bs";
 import { ProjectInterface, cPosType } from "../../vite-env";
-
+import {motion} from 'framer-motion'
 const ProjectCard = ({
   data,
   itemId,
@@ -56,7 +56,8 @@ const ProjectCard = ({
 
   return (
     <>
-      <div
+      <motion.div
+        whileHover={{y: -10}}
         onMouseEnter={mouseEnter}
         onMouseLeave={mouseLeave}
         className={`${gif} relative overflow-hidden bg-cover bg-center lg:h-[240px] lg:w-[400px] h-[200px] w-[300px] rounded-xl shadow-lg my-5 mx-2`}
@@ -74,7 +75,7 @@ const ProjectCard = ({
             <h1 className="ml-5 text-sm">{data.description}</h1>
           </div>
         </a>
-      </div>
+      </motion.div>
              
       <div className="flex justify-center items-center gap-2">
         <BsMouse />
