@@ -76,25 +76,21 @@ export const testimonialsData: TestimonialInterface[] = [
   {
     name: "Juuzou Suzuya",
     post: "Senior Investigator",
-    dp: "/src/assets/images/dp/juuzou_dp.jpeg",
     desc: "Coding with Kaneki was a thrilling experience. His precision and flair in tackling our toughest projects were truly remarkable. The results spoke for themselves.",
   },
   {
     name: "Touka Chan",
     post: "Student",
-    dp: "/src/assets/images/dp/touka_dp.jpeg",
     desc: "Learning from Kaneki felt like a transformation, just like Touka's journey. Patient and insightful, our guide through the coding world made it an enjoyable experience.",
   },
   {
     name: "The Owl",
     post: "Manager",
-    dp: "/src/assets/images/dp/yoshimura_dp.jpg",
     desc: "Our coding manager, The Owl, is like Yoshimura in the digital realm. His leadership style ensures projects are well-organized and results-driven under Kaneki's guidance.",
   },
   {
     name: "Nishio Senpai",
     post: "Student",
-    dp: "/src/assets/images/dp/nishio_dp.jpg",
     desc: "Learning from our coding senpai Kaneki was an enjoyable journey filled with expertise and patience, much like Nishio's guidance in Tokyo Ghoul.",
   },
 ];

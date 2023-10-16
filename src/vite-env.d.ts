@@ -37,7 +37,6 @@ interface TestimonialInterface {
   name: string;
   desc: string;
   post: string;
-  dp: string;
 }
 
 interface HandlesInterface {

@@ -52,7 +52,6 @@ const Testimonials = ({ setPreventScroll }: SetPreventScrollInterface) => {
                 <TestimonialCard
                   key={data.name}
                   desc={data.desc}
-                  dp={data.dp}
                   name={data.name}
                   post={data.post}
                 />

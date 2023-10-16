@@ -27,7 +27,7 @@ const Contact = () => {
       data.email.trim().length <= 0 ||
       data.feed.trim().length <= 0
     ) {
-      return alert("Please full all fields!");
+      return alert("Please fill all fields!");
     }
     setTimeout(() => {
       alert("Mail Sent Successfully");
