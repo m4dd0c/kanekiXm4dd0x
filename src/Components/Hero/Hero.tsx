@@ -8,7 +8,7 @@ import { useSwipe } from "../hook/useSwipe";
 const Hero = ({ setPreventScroll }: SetPreventScrollInterface) => {
   const { onTouchEnd, onTouchMove, onTouchStart } = useSwipe();
   return (
-    <div className="my-snap">
+    <div id="Home" className="my-snap">
       <div className="w-screen">
         <ScrollMenu
           scrollContainerClassName="hide-scroll"

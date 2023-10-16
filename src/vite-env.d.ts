@@ -29,9 +29,9 @@ interface DirectionTypeInterface {
 
 interface ProjectInterface {
   readonly id: string;
-  gif: string;
   title: string;
   description: string;
+  link: string;
 }
 interface TestimonialInterface {
   name: string;

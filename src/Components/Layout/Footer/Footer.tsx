@@ -1,9 +1,19 @@
-import { footerData, headerData } from "../../../assets/api/api";
+import { footerData } from "../../../assets/api/api";
 import { SiGithub, SiInstagram, SiLinkedin, SiYoutube } from "react-icons/si";
 import MotionWrapper from "../../FramerMotion/MotionWrapper";
-import { motion } from "framer-motion";
-import { btnAnim } from "../../FramerMotion/variants";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { bgVariant, btnAnim } from "../../FramerMotion/variants";
+import MagnaticWrapper from "../../FramerMotion/MagnaticWrapper";
+import { useEffect, useRef } from "react";
 const Footer = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const controls = useAnimation();
+  useEffect(() => {
+    if (isInView)
+      controls.start({ ...bgVariant.visible, transition: { delay: 0.5 } });
+  }, [isInView]);
+
   return (
     <div className="gradient text-red-600 my-snap">
       <div className="flex justify-evenly items-center">
@@ -16,69 +26,54 @@ const Footer = () => {
             </MotionWrapper>
           </div>
           <div className="flex py-5 justify-evenly items-center ">
-            <MotionWrapper dir="x">
-              <div className="tracking-wider">
-                <h1 className="text-xl">Links</h1>
-                <ul className="text-black">
-                  {headerData.map((i) => (
-                    <motion.li
-                      whileHover={{
-                        scale: 1.2,
-                        originX: 0,
-                        transition: { type: "spring", stiffness: 200 },
-                      }}
-                      whileTap={{ scale: 0.95 }}
-                      key={i}
-                      className="cursor-pointer hover:text-red-600"
-                    >
-                      {i}
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-            </MotionWrapper>
             <MotionWrapper dir="x" reverse={true} hold={1}>
               <div className="b2">
                 <div className="box">
                   <h1 className="text-xl">Follow me</h1>
                   <ul className="text-black flex gap-4 py-4">
                     {footerData.map((i) => (
-                      <motion.a
-                        whileHover={{
-                          scale: 1.2,
-                          transition: { type: "spring", stiffness: 200 },
-                        }}
-                        whileTap={{
-                          scale: 0.95,
-                          transition: { type: "spring", stiffness: 200 },
-                        }}
-                        href={i.link}
-                        className="hover:text-red-600"
-                        key={i.link}
-                        target="_blank"
-                      >
-                        {i.name === "linkedin" && <SiLinkedin size={20} />}
-                        {i.name === "instagram" && <SiInstagram size={20} />}
-                        {i.name === "github" && <SiGithub size={20} />}
-                        {i.name === "youtube" && <SiYoutube size={20} />}
-                      </motion.a>
+                      <MagnaticWrapper key={i.link}>
+                        <motion.a
+                          whileHover={{
+                            scale: 1.2,
+                            transition: { type: "spring", stiffness: 200 },
+                          }}
+                          whileTap={{
+                            scale: 0.95,
+                            transition: { type: "spring", stiffness: 200 },
+                          }}
+                          href={i.link}
+                          className="hover:text-red-600"
+                          target="_blank"
+                        >
+                          {i.name === "linkedin" && <SiLinkedin size={20} />}
+                          {i.name === "instagram" && <SiInstagram size={20} />}
+                          {i.name === "github" && <SiGithub size={20} />}
+                          {i.name === "youtube" && <SiYoutube size={20} />}
+                        </motion.a>
+                      </MagnaticWrapper>
                     ))}
                   </ul>
                 </div>
                 <div className="box my-2">
-                  <motion.button
-                    whileHover={btnAnim.hover}
-                    whileTap={btnAnim.tap}
-                    className="bg-red-600 px-2 py-1 text-center text-white hover:bg-black hover:text-white"
-                  >
-                    Download Resume
-                  </motion.button>
+                  <MagnaticWrapper>
+                    <motion.button
+                      whileHover={btnAnim.hover}
+                      whileTap={btnAnim.tap}
+                      className="bg-red-600 px-2 py-1 text-center text-white hover:bg-black hover:text-white"
+                    >
+                      Download Resume
+                    </motion.button>
+                  </MagnaticWrapper>
                 </div>
               </div>
             </MotionWrapper>
           </div>
         </div>
         <motion.div
+          ref={ref}
+          animate={controls}
+          initial={bgVariant.hidden}
           whileHover={{ x: 120 }}
           className="lg:h-[50vh] lg:w-[40vw] h-1 bg-haise bg-no-repeat bg-right-bottom bg-contain"
         ></motion.div>

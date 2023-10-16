@@ -10,13 +10,6 @@ import {
   TestimonialInterface,
 } from "../../vite-env";
 
-export const headerData: string[] = [
-  "Home",
-  "Skills",
-  "Projects",
-  "Testimonials",
-  "Contact",
-];
 export const footerData: HandlesInterface[] = [
   {
     link: "https://linkedin.com/in/m4dd0c",
@@ -52,27 +45,30 @@ export const iconData: string[] = [
 export const projectData: ProjectInterface[] = [
   {
     id: "1",
-    gif: "/src/assets/images/project/giphy01.gif",
-    title: "Clock Project",
-    description: "Your Virtual Analog & Digital Clock",
+    link: "https://swaaad.netlify.app",
+    title: "Swaaad Restaurant",
+    description: "A restaurant landing page with an elegant design.",
   },
   {
     id: "2",
-    gif: "/src/assets/images/project/giphy02.gif",
-    title: "Clock Project",
-    description: "Your Virtual Analog & Digital Clock",
+    link: "https://swaaad.netlify.app",
+    title: "StudyUnknown - Your Virtual Teacher",
+    description:
+      "An innovative virtual teaching platform with a focus on interactive learning.",
   },
   {
     id: "3",
-    gif: "/src/assets/images/project/giphy03.gif",
-    title: "Clock Project",
-    description: "Your Virtual Analog & Digital Clock",
+    link: "https://swaaad.netlify.app",
+    title: "Todo - Create, Edit, Check & Delete",
+    description:
+      "A simple and intuitive to-do list application for managing tasks efficiently.",
   },
   {
     id: "4",
-    gif: "/src/assets/images/project/giphy04.gif",
-    title: "Clock Project",
-    description: "Your Virtual Analog & Digital Clock",
+    link: "https://swaaad.netlify.app",
+    title: "An E-commerce Store",
+    description:
+      "A fully functional e-commerce website for buying and selling products online.",
   },
 ];
 
@@ -81,25 +77,25 @@ export const testimonialsData: TestimonialInterface[] = [
     name: "Juuzou Suzuya",
     post: "Senior Investigator",
     dp: "/src/assets/images/dp/juuzou_dp.jpeg",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita laborum nobis obcaecati ipsa, voluptas pariatur nisi sapiente quas sequi nemo!",
+    desc: "Coding with Kaneki was a thrilling experience. His precision and flair in tackling our toughest projects were truly remarkable. The results spoke for themselves.",
   },
   {
     name: "Touka Chan",
     post: "Student",
     dp: "/src/assets/images/dp/touka_dp.jpeg",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita laborum nobis obcaecati ipsa, voluptas pariatur nisi sapiente quas sequi nemo!",
+    desc: "Learning from Kaneki felt like a transformation, just like Touka's journey. Patient and insightful, our guide through the coding world made it an enjoyable experience.",
   },
   {
     name: "The Owl",
     post: "Manager",
     dp: "/src/assets/images/dp/yoshimura_dp.jpg",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita laborum nobis obcaecati ipsa, voluptas pariatur nisi sapiente quas sequi nemo!",
+    desc: "Our coding manager, The Owl, is like Yoshimura in the digital realm. His leadership style ensures projects are well-organized and results-driven under Kaneki's guidance.",
   },
   {
     name: "Nishio Senpai",
     post: "Student",
     dp: "/src/assets/images/dp/nishio_dp.jpg",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita laborum nobis obcaecati ipsa, voluptas pariatur nisi sapiente quas sequi nemo!",
+    desc: "Learning from our coding senpai Kaneki was an enjoyable journey filled with expertise and patience, much like Nishio's guidance in Tokyo Ghoul.",
   },
 ];
 
@@ -145,9 +141,7 @@ export const heroOnWheel = (
     return;
   }
 
-  console.log('Insider');
-  
-  if (ev.deltaY < 0) {  
+  if (ev.deltaY < 0) {
     // NOTE: for center items
     const nextGroupItems = slidingWindow(
       items.toItemsKeys(),

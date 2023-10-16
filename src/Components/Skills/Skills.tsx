@@ -4,6 +4,7 @@ import { IconContainer } from "./IconContainer";
 import { useInView } from "framer-motion";
 import { btnAnim, hoverTitle } from "../FramerMotion/variants";
 import { motion } from "framer-motion";
+import MagnaticWrapper from "../FramerMotion/MagnaticWrapper";
 export const Skills = () => {
   const [cPos, setCPos] = useState({ left: 0, top: 0 });
   const [showOverlay, setShowOverlay] = useState<boolean>(true);
@@ -28,7 +29,7 @@ export const Skills = () => {
   const isInView = useInView(ref, { margin: "-50%" });
 
   return (
-    <div className="my-snap">
+    <div id="Skills" className="my-snap">
       <div
         className="pt-10 lg:pt-0 min-h-screen bg-black flex justify-between items-center lg:flex-row flex-col snap-start relative"
         ref={ref}
@@ -40,7 +41,10 @@ export const Skills = () => {
           Lights {showOverlay ? "on" : "off"}
         </button>
         <div className="lg:w-1/2 w-5/6">
-          <motion.h1 whileHover={{...hoverTitle, originX:0}} className="lg:w-5/6 w-full mx-auto tracking-wider text-white text-5xl underline underline-offset-2 my-5">
+          <motion.h1
+            whileHover={{ ...hoverTitle, originX: 0 }}
+            className="lg:w-5/6 w-full mx-auto tracking-wider text-white text-5xl underline underline-offset-2 my-5"
+          >
             About Me
           </motion.h1>
           <div className="lg:w-5/6 w-full mx-auto tracking-wider">
@@ -80,9 +84,14 @@ export const Skills = () => {
           </div>
         </div>
         <div className="lg:h-screen lg:w-1/2 my-10 w-screen bg-bloodImg bg-center lg:bg-cover bg-contain bg-no-repeat flex justify-center items-center flex-col">
-          <motion.h1 whileHover={hoverTitle} className="text-white text-5xl underline-offset-2 underline my-5">
-            Skills
-          </motion.h1>
+          <MagnaticWrapper>
+            <motion.h1
+              whileHover={hoverTitle}
+              className="text-white text-5xl underline-offset-2 underline my-5"
+            >
+              Skills
+            </motion.h1>
+          </MagnaticWrapper>
           <div className="flex flex-wrap w-1/2">
             {iconData.map((i) => (
               <IconContainer skill={i} key={i} />
